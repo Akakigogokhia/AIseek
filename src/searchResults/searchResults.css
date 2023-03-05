@@ -1,0 +1,163 @@
+.searchResults {
+  width: 53%;
+  height: 250px;
+  padding: 50px;
+  padding-top: 20px;
+  background-color: white;
+  opacity: 0.8;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow-y: scroll;
+  position: relative;
+}
+
+.result_container {
+  width: 100%;
+  height: 100%;
+}
+
+.searchResults::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.search_result {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 7%;
+}
+
+.search_resultUrl {
+  width: 90%;
+  font-size: 12px;
+  opacity: 0.8;
+  height: max-content;
+}
+
+.search_resultLink {
+  width: 90%;
+  font-size: 22px;
+  text-decoration: none;
+  margin-top: 4px;
+}
+
+.description {
+  width: 90%;
+  opacity: 0.9;
+  margin-top: 6px;
+}
+
+#next {
+  position: absolute;
+  right: 15px;
+  top: 42%;
+  cursor: pointer;
+}
+
+#back {
+  position: absolute;
+  left: 15px;
+  top: 42%;
+  cursor: pointer;
+}
+
+.pagination {
+  cursor: pointer !important;
+}
+
+#nextResult {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  rotate: 180deg;
+  margin-right: 2px;
+  color: #007aff;
+}
+
+#prevResult {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 2px;
+  color: #007aff;
+}
+
+#prevResult:active {
+  transform: translateY(2px);
+}
+#nextResult:active {
+  transform: translateY(-2px);
+}
+
+.result_pages {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  position: absolute;
+  right: 40px;
+  bottom: 24px;
+  opacity: 0.8;
+  z-index: 1;
+}
+
+.swiper {
+  padding-bottom: 25px !important;
+  height: 100% !important;
+}
+
+.swiper-pagination {
+  text-align: left !important;
+  bottom: 0 !important;
+  margin-left: 40px;
+}
+
+.result_loading::after {
+  content: '';
+  animation: result_loading 1200ms linear infinite;
+}
+
+@keyframes result_loading {
+  0% {
+    content: '';
+  }
+  30% {
+    content: '.';
+  }
+  60% {
+    content: '..';
+  }
+  90% {
+    content: '...';
+  }
+}
+
+@media (max-width: 1000px) {
+  .searchResults {
+    width: 80%;
+    height: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .searchResults {
+    width: 95%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .search_result {
+    margin-top: 20px;
+    justify-content: flex-start;
+  }
+  .swiper-pagination {
+    margin-left: 15px;
+  }
+}
+
+@media (max-width: 350px) {
+  .swiper-pagination {
+    display: none;
+  }
+}

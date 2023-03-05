@@ -1,0 +1,160 @@
+.chat {
+  width: 60%;
+  height: 360px;
+  padding: 80px;
+  padding-top: 30px;
+  background-color: white;
+  opacity: 0.8;
+  box-sizing: border-box;
+  border-radius: 10px;
+  overflow-y: scroll;
+  position: relative;
+  z-index: 0;
+}
+
+.arrows {
+  position: relative;
+}
+
+.chat::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+#questionWrapper {
+  height: max-content;
+  border: 1px solid rgb(245, 244, 244);
+  background-color: rgb(250, 250, 250);
+  display: flex;
+  align-items: center;
+  padding: 18px 15px;
+}
+
+#answerWrapper {
+  height: max-content;
+  padding: 15px 15px 30px 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+}
+
+#loading_text::after {
+  animation: loading_text 1200ms linear infinite;
+  content: '';
+}
+
+@keyframes loading_text {
+  0% {
+    content: '';
+  }
+  30% {
+    content: '.';
+  }
+  60% {
+    content: '..';
+  }
+  90% {
+    content: '...';
+  }
+}
+
+#regenerate {
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  background-color: transparent;
+  border: 1px solid rgb(161, 151, 151);
+  height: 40px;
+  cursor: pointer;
+  position: absolute;
+  opacity: 0.9;
+  border-radius: 3px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+#restart {
+  width: 20px;
+  opacity: 0.6;
+}
+
+.changeAnswer {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.changeAnswer > span {
+  font-size: 14px;
+}
+
+#nextAnswer {
+  width: 10px;
+  height: 10px;
+  margin-left: 2px;
+  cursor: pointer;
+}
+
+#prevAnswer {
+  width: 10px;
+  height: 10px;
+  cursor: pointer;
+}
+
+#nextSearch {
+  position: fixed;
+  top: 40%;
+  cursor: pointer;
+  right: 16.4%;
+  color: white;
+}
+
+#prevSearch {
+  position: fixed;
+  left: 17%;
+  top: 40%;
+  cursor: pointer;
+  color: white;
+}
+
+#nextQuestion {
+  opacity: 0.7;
+  width: 14.5px;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+#prevQuestion {
+  width: 15px;
+  opacity: 0.7;
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .chat {
+    width: 90%;
+    padding: 30px 30px 80px 30px;
+  }
+
+  #nextSearch {
+    display: none;
+  }
+
+  #prevSearch {
+    display: none;
+  }
+}
+
+@media (max-width: 500px) {
+  .chat {
+    width: 95%;
+    padding: 25px 10px 70px 10px;
+  }
+}

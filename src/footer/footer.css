@@ -1,0 +1,36 @@
+.footer {
+  width: 100%;
+  height: 35px;
+  bottom: 0;
+  position: absolute;
+  background-color: #333333;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgb(155, 154, 154);
+  font-size: 13px;
+}
+
+.footer_copyright {
+  margin-right: 2%;
+}
+
+.footer_left {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.change_wallpaper {
+  width: max-content;
+  margin-left: 24px;
+}
+
+.change {
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.change:hover {
+  color: white;
+}

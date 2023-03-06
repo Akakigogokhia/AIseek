@@ -14,19 +14,24 @@ export const useFetch = (prompt) => {
         const configuration = new Configuration({
           apiKey: process.env.REACT_APP_GPT_KEY,
         });
-
+        delete configuration.baseOptions.headers['User-Agent'];
         const openai = new OpenAIApi(configuration);
-        const response = await openai.createCompletion({
-          model: 'text-davinci-003',
-          prompt: prompt,
+        const response = await openai.createChatCompletion({
+          model: 'gpt-3.5-turbo',
           temperature: 0.8,
-          max_tokens: 200,
+          max_tokens: 500,
           top_p: 1,
           frequency_penalty: 1,
           presence_penalty: 0,
+          messages: [
+            {
+              role: 'system',
+              content: 'you are chatbot of search engine called AIseek',
+            },
+            { role: 'user', content: prompt },
+          ],
         });
-
-        const answer = response.data.choices[0].text;
+        const answer = response.data.choices[0].message.content;
         setData(answer);
         setLoading(false);
       } catch (error) {

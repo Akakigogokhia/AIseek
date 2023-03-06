@@ -26,7 +26,11 @@ export default function Chat({ prompt, loading, data, regenerate, same }) {
       question: prompt,
       answers: answers,
     };
-    if (!same && answers.length > 0)
+    if (
+      !same &&
+      answers.length > 0 &&
+      conversation[convLength - 1].question !== prompt
+    )
       setConversation((prevChat) => [...prevChat, newChat]);
     else if (same && answers.length > 0) {
       const updatedConv = [...conversation];

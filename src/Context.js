@@ -35,7 +35,7 @@ export const ContextProvider = ({ children }) => {
     setImagePage(1);
     setNext(1);
     if (prompt) {
-      setNewPrompt(`"${prompt}" most important word in this text is:`);
+      setNewPrompt(`"${prompt}" most important words in this text are:`);
     }
   }, [prompt]);
 

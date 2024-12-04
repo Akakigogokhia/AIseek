@@ -21,28 +21,28 @@ export default function Header() {
   };
 
   return (
-    <main className='header'>
-      <Link to='/'>
-        <img id='logo' src='../logo-main.png' />
+    <main className="header">
+      <Link to="/">
+        <img id="logo" src="../logo-main.png" />
       </Link>
-      <nav id='home_nav'>
-        <Link to='/' className='link'>
-          <div id='chat' className={location === '/' && 'focus'}>
+      <nav id="home_nav">
+        <Link to="/" className="link">
+          <div id="chat" className={location === '/' ? 'focus' : ''}>
             Chat
           </div>
         </Link>
-        <Link to='/results' className='link'>
-          <div id='results' className={location === '/results' && 'focus'}>
+        <Link to="/results" className="link">
+          <div id="results" className={location === '/results' ? 'focus' : ''}>
             Web Results
           </div>
         </Link>
-        <Link to='/images' className='link'>
-          <div id='images' className={location === '/images' && 'focus'}>
+        <Link to="/images" className="link">
+          <div id="images" className={location === '/images' ? 'focus' : ''}>
             Images
           </div>
         </Link>
-        <Link to='/videos' className='link'>
-          <div id='videos' className={location === '/videos' && 'focus'}>
+        <Link to="/videos" className="link">
+          <div id="videos" className={location === '/videos' ? 'focus' : ''}>
             Videos
           </div>
         </Link>
@@ -52,36 +52,36 @@ export default function Header() {
         className={visible ? 'menu-section menu-open' : 'menu-section'}
       >
         <img
-          id='menuBar'
-          src='../menu.png'
+          id="menuBar"
+          src="../menu.png"
           onClick={() => setVisible(!visible)}
         />
         {visible && (
-          <div className='menu'>
+          <div className="menu">
             <Link
-              to='/'
-              className='menu-link'
+              to="/"
+              className="menu-link"
               onClick={() => setVisible(false)}
             >
               <div>Chat</div>
             </Link>
             <Link
-              to='/results'
-              className='menu-link'
+              to="/results"
+              className="menu-link"
               onClick={() => setVisible(false)}
             >
               <div>Web Results</div>
             </Link>
             <Link
-              to='/images'
-              className='menu-link'
+              to="/images"
+              className="menu-link"
               onClick={() => setVisible(false)}
             >
               <div>Images</div>
             </Link>
             <Link
-              to='/videos'
-              className='menu-link'
+              to="/videos"
+              className="menu-link"
               onClick={() => setVisible(false)}
             >
               <div>Videos</div>

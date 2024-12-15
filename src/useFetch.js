@@ -17,7 +17,7 @@ export const useFetch = (prompt) => {
         delete configuration.baseOptions.headers['User-Agent'];
         const openai = new OpenAIApi(configuration);
         const response = await openai.createChatCompletion({
-          model: 'gpt-3.5-turbo',
+          model: 'gpt-4-turbo',
           temperature: 0.8,
           max_tokens: 500,
           top_p: 1,
